@@ -13,7 +13,12 @@ def calculadora(num1: float, num2: float, operador: str) -> float:
         result = num1 * num2
     elif operador == '/':
         result = num1 / num2 if num2 != 0 else float("nan")
-
+    elif operador == '**':
+        return num1 ** num2 
+    elif operador == '%':
+        return num1 % num2 if num2 != 0 else float("nan")
+    else:
+        return float("nan")
     return result
 
 
@@ -27,7 +32,7 @@ if __name__ == "__main__":
             print('----------------------------------\n')
 
             num1 = float(input("Primeiro número: "))
-            operador = input("Operador (+, -, *, / ou q para sair): ")
+            operador = input("Operador (+, -, *, /, %, ** ou q para sair): ")
 
             if operador.lower() == 'q':
                 break
